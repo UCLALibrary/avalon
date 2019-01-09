@@ -1,2 +1,3 @@
-development: localhost:6379
-test: localhost:6379
+development: <%= ENV['REDIS_RESQUE_HOST'] || localhost %>:<%= ENV['REDIS_RESQUE_PORT'] || 6379 %>
+test: <%= ENV['REDIS_RESQUE_HOST'] || localhost %>:<%= ENV['REDIS_RESQUE_PORT'] || 6379 %>
+production: <%= ENV['REDIS_RESQUE_HOST'] %>:<%= ENV['REDIS_RESQUE_PORT'] %>
